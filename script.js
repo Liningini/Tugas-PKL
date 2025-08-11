@@ -12,22 +12,7 @@ function toggleAccordion(id) {
     }
 }
 
-let currentSlide = 0;
+document.querySelector('.hamburger').addEventListener('click', function() {
+    document.querySelector('.text-above').classList.toggle('active');
+});
 
-function updateSlider() {
-  const track = document.getElementById('testimonial-track');
-  const slideWidth = document.querySelector('.testimonial-card').offsetWidth + 40; // card + margin
-  track.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
-}
-
-function nextSlide() {
-  const total = document.querySelectorAll('.testimonial-card').length;
-  currentSlide = (currentSlide + 1) % total;
-  updateSlider();
-}
-
-function prevSlide() {
-  const total = document.querySelectorAll('.testimonial-card').length;
-  currentSlide = (currentSlide - 1 + total) % total;
-  updateSlider();
-}
